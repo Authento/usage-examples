@@ -1,3 +1,4 @@
+import NextAuthProvider from "@/components/providers/nextAuth";
 import WagmiProvider from "@/components/providers/wagmi";
 
 import "@/styles/global.css";
@@ -15,7 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <WagmiProvider>{children}</WagmiProvider>
+        <NextAuthProvider>
+          <WagmiProvider>{children}</WagmiProvider>
+        </NextAuthProvider>
       </body>
     </html>
   );

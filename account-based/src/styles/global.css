@@ -10,12 +10,21 @@ body {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
+div.page {
+  background: red !important;
+}
+
 .container {
   display: flex;
   height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.loading {
+  color: #ddd;
+  font-size: 16px;
 }
 
 .panel {
@@ -25,55 +34,41 @@ body {
   box-shadow: 2px 2px 4px #000000a0;
 }
 
-.panel > div {
-  display: flex;
-}
-
-.panel > div > div {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-right: 15px;
-}
-
 .panel td {
   padding: 4px 12px;
 }
 
-.address {
-  display: block;
-  color: #fff;
-  font-size: 16px;
-}
-
-.user-type {
-  display: block;
-  color: #3dcbff;
-  font-size: 12px;
-  text-transform: capitalize;
-}
-
-.status {
-  display: inline-block;
+table td {
   color: #a0a0a0;
   font-size: 16px;
-  text-transform: capitalize;
 }
 
-.status.verified {
+.VERIFIED {
   color: #88ff88;
 }
 
-.status.rejected {
+.REJECTED {
   color: #ff6060;
 }
 
+/* input {
+  height: 24px;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  background-color: transparent;
+  color: #ddd;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid #a0a0a0;
+  outline: none;
+} */
+
 button {
-  height: 40px;
-  padding: 0px 20px;
+  height: 34px;
+  padding: 0px 15px;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 14px;
   box-shadow: 2px 2px 4px #00000050;
   cursor: pointer;
 }
