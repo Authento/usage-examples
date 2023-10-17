@@ -1,0 +1,38 @@
+{
+  "name": "authento-integration-demo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Authento/usage-examples"
+  },
+  "bugs": {
+    "url": "https://github.com/Authento/usage-examples/issues"
+  },
+  "dependencies": {
+    "authento-react": "^1.0.9",
+    "jsonwebtoken": "^9.0.2",
+    "next": "13.4.7",
+    "next-auth": "^4.23.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.3",
+    "@types/node": "20.3.2",
+    "@types/react": "18.2.14",
+    "@types/react-dom": "18.2.6",
+    "eslint": "8.43.0",
+    "eslint-config-next": "13.4.7",
+    "typescript": "^5.1.6"
+  }
+}

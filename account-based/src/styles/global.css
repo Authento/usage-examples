@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  background: linear-gradient(
+    0deg,
+    rgb(32 94 122) 0%,
+    rgb(32 64 86) 30%,
+    rgb(4 20 44) 100%
+  );
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading {
+  color: #ddd;
+  font-size: 16px;
+}
+
+.panel {
+  padding: 8px 16px;
+  background: #20202080;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px #000000a0;
+}
+
+.panel td {
+  padding: 4px 12px;
+}
+
+table td {
+  color: #a0a0a0;
+  font-size: 16px;
+}
+
+.VERIFIED {
+  color: #88ff88;
+}
+
+.REJECTED {
+  color: #ff6060;
+}
+
+button {
+  height: 34px;
+  padding: 0px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  box-shadow: 2px 2px 4px #00000050;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: transparent;
+  border: 1px solid #7a7a7a;
+  color: #7a7a7a;
+  cursor: default;
+}
+
+.panel button {
+  height: 36px;
+  width: 115px;
+  margin-left: 15px;
+  padding: 0px 18px;
+  font-size: 15px;
+  box-shadow: 1px 1px 3px #00000050;
+}
+
+.primary-btn {
+  background: #26b8a5;
+  color: #fff;
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 1px solid #26b8a5;
+  color: #26b8a5;
+}
