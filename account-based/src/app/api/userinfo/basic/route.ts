@@ -21,7 +21,9 @@ const _mockGetUserStatus = async () => {
     throw new Error("Unable to retrieve user ID from session");
   }
 
-  const url = `${basicUserInfoEndpoint}?userIdentifier=${session.user.id}`;
+  const url = `${basicUserInfoEndpoint}?userIdentifier=${encodeURIComponent(
+    session.user.id
+  )}`;
   const timestamp = Date.now().toString();
   const signature = crypto
     .createHmac("sha256", apiSecret)
