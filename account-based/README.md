@@ -1,4 +1,4 @@
-# Authento off-chain access control example
+# Authento account-based verification example
 This is react/nextjs demo implementation of Authento account-based verification flow.
 
 ## Prerequisites

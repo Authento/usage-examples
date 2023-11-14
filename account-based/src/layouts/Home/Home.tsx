@@ -91,7 +91,7 @@ const Home: NextPage = () => {
           <table>
             <tbody>
               <tr>
-                <td>Username:</td>
+                <td>userIdentifier:</td>
                 <td width={80}>{session?.user.id}</td>
                 <td>
                   <button
