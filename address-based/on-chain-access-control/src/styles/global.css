@@ -1,0 +1,150 @@
+body {
+  margin: 0;
+  background: linear-gradient(
+    0deg,
+    rgb(32 94 122) 0%,
+    rgb(32 64 86) 30%,
+    rgb(4 20 44) 100%
+  );
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  margin-bottom: 40px;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 16px;
+  background: #20202080;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px #000000a0;
+}
+
+.panel > div {
+  display: flex;
+}
+
+.panel > div > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 15px;
+}
+
+.panel td {
+  padding: 4px 12px;
+}
+
+.address {
+  display: block;
+  color: #fff;
+  font-size: 16px;
+}
+
+.user-type {
+  display: block;
+  color: #3dcbff;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.status {
+  display: inline-block;
+  color: #a0a0a0;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.status.verified {
+  color: #88ff88;
+}
+
+.status.rejected {
+  color: #ff6060;
+}
+
+button {
+  height: 40px;
+  padding: 0px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 2px 2px 4px #00000050;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: transparent;
+  border: 1px solid #7a7a7a;
+  color: #7a7a7a;
+  cursor: default;
+}
+
+.panel button {
+  height: 36px;
+  width: 115px;
+  margin-left: 15px;
+  padding: 0px 18px;
+  font-size: 15px;
+  box-shadow: 1px 1px 3px #00000050;
+}
+
+.primary-btn {
+  background: #26b8a5;
+  color: #fff;
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 1px solid #26b8a5;
+  color: #26b8a5;
+}
+
+button.mint {
+  margin: 5px 0;
+}
+
+hr {
+  width: 100%;
+  margin: 10px 0;
+  border-color: #7a7a7a;
+}
+
+.spinner {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  vertical-align: middle;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.tx-success {
+  margin-top: 12px;
+  font-size: 18px;
+  color: #fff;
+}
