@@ -73,7 +73,7 @@ const Home: NextPage = () => {
                   <span className="status">BASIC: </span>
                 </td>
                 <td>
-                  <span className={`status ${status?.basic}`}>
+                  <span className={`status ${status?.basic.toLowerCase()}`}>
                     {capitalize(status?.basic || "UNKNOWN")}
                   </span>
                 </td>
@@ -98,7 +98,7 @@ const Home: NextPage = () => {
                   <span className="status">POA:</span>
                 </td>
                 <td>
-                  <span className={`status ${status?.poa}`}>
+                  <span className={`status ${status?.poa.toLowerCase()}`}>
                     {capitalize(status?.poa || "UNKNOWN")}
                   </span>
                 </td>
