@@ -1,4 +1,7 @@
+"use client";
+
 import WagmiProvider from "@/components/providers/wagmi";
+import { CosmosProvider } from "authento-react";
 
 import "@/styles/global.css";
 
@@ -15,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <WagmiProvider>{children}</WagmiProvider>
+        <CosmosProvider>
+          <WagmiProvider>{children}</WagmiProvider>
+        </CosmosProvider>
       </body>
     </html>
   );

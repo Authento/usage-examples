@@ -1,13 +1,9 @@
 lockfileVersion: '6.0'
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
-
 dependencies:
   authento-react:
-    specifier: ^1.0.8
-    version: 1.0.8(react@18.2.0)(uuid@9.0.0)(wagmi@1.4.1)
+    specifier: ^1.0.15
+    version: 1.0.15(@cosmostation/use-wallets@2.0.6)(@cosmostation/wallets@2.0.6)(react@18.2.0)(uuid@9.0.0)(wagmi@1.4.1)
   next:
     specifier: 13.4.7
     version: 13.4.7(react-dom@18.2.0)(react@18.2.0)
@@ -98,6 +94,25 @@ packages:
       - encoding
       - supports-color
       - utf-8-validate
+    dev: false
+
+  /@cosmostation/use-wallets@2.0.6(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-hILhjIs5oupjLInQKePSgDlK60kpT6Ok/R7afxlVzAXB3+MC4p+IgdWa5Ac9KHLewucWgizIZstiJ052hV0B/w==}
+    engines: {node: '>= 16.0.0'}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      '@cosmostation/wallets': 2.0.6
+      '@tanstack/react-query': 4.36.1(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+    transitivePeerDependencies:
+      - react-dom
+      - react-native
+    dev: false
+
+  /@cosmostation/wallets@2.0.6:
+    resolution: {integrity: sha512-UypsEw5g4zktw4F2YinVVJeXbvJqHA0/aOVgjBtjvcWQw2stePomzaifhF2IZx9R7vnUBJszijYfiSEBufAAhA==}
+    engines: {node: '>= 16.0.0'}
     dev: false
 
   /@eslint-community/eslint-utils@4.4.0(eslint@8.43.0):
@@ -604,6 +619,10 @@ packages:
     resolution: {integrity: sha512-uPe1DukeIpIHpQi6UzIgBcXsjjsDaLnc7hF+zLBKnaUlh7jFE/A+P8t4cU4VzKPMFB/C970n/9SxtpO5hmIRgw==}
     dev: false
 
+  /@tanstack/query-core@4.36.1:
+    resolution: {integrity: sha512-DJSilV5+ytBP1FbFcEJovv4rnnm/CokuVvrBEtW/Va9DvuJ3HksbXUJEpI0aV1KtuL4ZoO9AVE6PyNLzF7tLeA==}
+    dev: false
+
   /@tanstack/query-persist-client-core@4.29.19:
     resolution: {integrity: sha512-rr6p3xwEZCz3cEDZsj3QGePf6PG44WxRUGQVcm2JFPZOq9TkG/0i5+hQ3STiHm1Fj6qwCH8xIi62L8kG0zRj/Q==}
     dependencies:
@@ -638,6 +657,24 @@ packages:
         optional: true
     dependencies:
       '@tanstack/query-core': 4.29.19
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      use-sync-external-store: 1.2.0(react@18.2.0)
+    dev: false
+
+  /@tanstack/react-query@4.36.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-y7ySVHFyyQblPl3J3eQBWpXZkliroki3ARnBKsdJchlgt7yJLRDUcf4B8soufgiYt3pEQIkBWBx1N9/ZPIeUWw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      '@tanstack/query-core': 4.36.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       use-sync-external-store: 1.2.0(react@18.2.0)
@@ -1360,13 +1397,17 @@ packages:
     engines: {node: '>=8.0.0'}
     dev: false
 
-  /authento-react@1.0.8(react@18.2.0)(uuid@9.0.0)(wagmi@1.4.1):
-    resolution: {integrity: sha512-b3drbaqsQhtlHEviyziBXNWifWoyXLzo4xkz+RgL8Wa/8hmheCFay/m/Kxkpm1aX9NcBZkBFoMxz7YlAhRZPtw==}
+  /authento-react@1.0.15(@cosmostation/use-wallets@2.0.6)(@cosmostation/wallets@2.0.6)(react@18.2.0)(uuid@9.0.0)(wagmi@1.4.1):
+    resolution: {integrity: sha512-qJX7uKBoeYITQEMT9a3VrW4BfTQlSDV8bb7IJWfVQVpvj4sP4/f/jdfeFvohocM+axaE+gTxgCVtXc/J4V1kzg==}
     peerDependencies:
+      '@cosmostation/use-wallets': ^2.0.6
+      '@cosmostation/wallets': ^2.0.6
       react: '>=17.0.0'
       uuid: ^9.0.0
       wagmi: ^1.0.1
     dependencies:
+      '@cosmostation/use-wallets': 2.0.6(react-dom@18.2.0)(react@18.2.0)
+      '@cosmostation/wallets': 2.0.6
       react: 18.2.0
       uuid: 9.0.0
       wagmi: 1.4.1(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)(typescript@5.1.6)(viem@1.10.4)
@@ -4150,3 +4191,7 @@ packages:
       react: 18.2.0
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false

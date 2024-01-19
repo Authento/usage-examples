@@ -2,40 +2,32 @@
 
 import { useCallback } from "react";
 import type { NextPage } from "next";
+import { useCosmos } from "authento-react";
+import { useAccount, useConnect } from "wagmi";
 
-import { useStatus, useVerifyPopup } from "authento-react";
-import { useAccount, useConnect, useDisconnect } from "wagmi";
-
-import { shortenEthAddress } from "@/utils/shortenEthAddress";
-import { capitalize } from "@/utils/capitalize";
+import { ConnectPanel } from "@/components/panels/ConnectPanel";
+import { CosmoPanel } from "@/components/panels/CosmoPanel";
+import { EthPanel } from "@/components/panels/EthPanel";
 
 const Home: NextPage = () => {
   // Wagmi hooks
-  const { connect, connectors } = useConnect();
-  const { address } = useAccount();
-  const { disconnect } = useDisconnect();
+  const { connect: connectEth, connectors } = useConnect();
+  const { address: ethAddress } = useAccount();
 
-  // Authento hooks
-  const { verifyBasic, verifyPoa } = useVerifyPopup({
-    domainName: process.env.NEXT_PUBLIC_DOMAIN_NAME as string,
-    messageText: process.env.NEXT_PUBLIC_MESSAGE_TEXT as string,
-    authentoUrl: process.env.NEXT_PUBLIC_AUTHENTO_URL as string,
-    // Set default userType as required
-    // userType: "INDIVIDUAL",
-  });
-  const { status, type } = useStatus({
-    endpoint: "/api/userinfo/basic",
-  });
+  const {
+    address: cosmosAddress,
+    connect: connectCosmos,
+    disconnect: disconnectCosmos,
+  } = useCosmos(process.env.NEXT_PUBLIC_COSMOS_CHAIN_ID);
 
-  // Handle connect wallet button click
-  const handleConnect = useCallback(() => {
-    connect({ connector: connectors[0] });
-  }, [connect, connectors]);
+  // Handlers for connect wallet buttons
+  const handleEthConnect = useCallback(() => {
+    connectEth({ connector: connectors[0] });
+  }, [connectEth, connectors]);
 
-  // Handle disconnect button click
-  const handleDisconnect = useCallback(() => {
-    disconnect();
-  }, [disconnect]);
+  const handleCosmosConnect = useCallback(() => {
+    connectCosmos("keplr");
+  }, [connectCosmos]);
 
   // Render the component
   return (
@@ -47,85 +39,15 @@ const Home: NextPage = () => {
         height={45}
         style={{ marginBottom: 40 }}
       />
-      {address ? (
-        <div className="panel">
-          <table>
-            <tbody>
-              <tr>
-                <td width={150} colSpan={2}>
-                  <span className="address">
-                    {`${shortenEthAddress(address)}`}
-                  </span>
-                  <span className="user-type">{capitalize(type)}</span>
-                </td>
-                <td>
-                  <button
-                    type="button"
-                    className="secondary-btn"
-                    onClick={handleDisconnect}
-                  >
-                    Disconnect
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <span className="status">BASIC: </span>
-                </td>
-                <td>
-                  <span className={`status ${status?.basic.toLowerCase()}`}>
-                    {capitalize(status?.basic || "UNKNOWN")}
-                  </span>
-                </td>
-                <td>
-                  <button
-                    type="button"
-                    className="primary-btn"
-                    onClick={verifyBasic}
-                    disabled={
-                      !(
-                        status?.basic === "UNVERIFIED" ||
-                        status?.basic === "INFO_REQUIRED"
-                      )
-                    }
-                  >
-                    Verify
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <span className="status">POA:</span>
-                </td>
-                <td>
-                  <span className={`status ${status?.poa.toLowerCase()}`}>
-                    {capitalize(status?.poa || "UNKNOWN")}
-                  </span>
-                </td>
-                <td>
-                  <button
-                    type="button"
-                    className="primary-btn"
-                    onClick={verifyPoa}
-                    disabled={
-                      !(
-                        status?.basic === "VERIFIED" &&
-                        (status?.poa === "UNVERIFIED" ||
-                          status?.poa === "INFO_REQUIRED")
-                      )
-                    }
-                  >
-                    Verify
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      {ethAddress ? (
+        <EthPanel address={ethAddress} />
+      ) : cosmosAddress ? (
+        <CosmoPanel address={cosmosAddress} disconnect={disconnectCosmos} />
       ) : (
-        <button className="primary-btn" onClick={handleConnect}>
-          Connect Wallet
-        </button>
+        <ConnectPanel
+          handleEthConnect={handleEthConnect}
+          handleCosmosConnect={handleCosmosConnect}
+        />
       )}
     </div>
   );
