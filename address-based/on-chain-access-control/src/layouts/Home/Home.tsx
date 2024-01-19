@@ -8,7 +8,6 @@ import { useAccount, useConnect, useContractWrite } from "wagmi";
 import Logo from "src/components/Logo";
 import KycPanel from "src/components/KycPanel";
 import TxSuccess from "src/components/TxSucess";
-import { chain } from "src/constants/blockExplorer";
 import json from "artifacts/contracts/AuthentoOnChainAccess.sol/AuthentoOnChainAccess.json";
 
 const Home: NextPage = () => {
