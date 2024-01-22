@@ -13,9 +13,6 @@ dependencies:
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
-  uuid:
-    specifier: ^9.0.1
-    version: 9.0.1
   viem:
     specifier: ^1.19.8
     version: 1.19.8(typescript@5.0.4)
@@ -39,9 +36,6 @@ devDependencies:
   '@types/react-dom':
     specifier: 18.2.6
     version: 18.2.6
-  '@types/uuid':
-    specifier: ^9.0.7
-    version: 9.0.7
   dotenv:
     specifier: ^16.3.1
     version: 16.3.1
@@ -1597,10 +1591,6 @@ packages:
   /@types/trusted-types@2.0.7:
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
     dev: false
-
-  /@types/uuid@9.0.7:
-    resolution: {integrity: sha512-WUtIVRUZ9i5dYXefDEAI7sh9/O7jGvHg7Df/5O/gtH3Yabe5odI3UWopVR1qbPXQtvOxWu3mM4XxlYeZtMWF4g==}
-    dev: true
 
   /@types/ws@7.4.7:
     resolution: {integrity: sha512-JQbbmxZTZehdc2iszGKs5oC3NFnjeay7mtAWrdt7qNtAVK0g19muApzAy4bm9byz79xa2ZnO/BOBC2R8RC5Lww==}
