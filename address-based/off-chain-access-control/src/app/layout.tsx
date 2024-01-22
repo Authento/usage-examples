@@ -1,7 +1,5 @@
-"use client";
-
 import WagmiProvider from "@/components/providers/wagmi";
-import { CosmosProvider } from "authento-react";
+import CosmosProvider from "@/components/providers/Cosmos";
 
 import "@/styles/global.css";
 
