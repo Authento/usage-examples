@@ -14,6 +14,7 @@ const Home: NextPage = () => {
   const { connect: connectEth, connectors } = useConnect();
   const { address: ethAddress } = useAccount();
 
+  //Cosmos hooks
   const {
     address: cosmosAddress,
     connect: connectCosmos,
@@ -33,11 +34,11 @@ const Home: NextPage = () => {
   return (
     <div className="container">
       <img
+        id="logo"
         src="/authento.svg"
         alt="Authento Logo"
         width={386}
         height={45}
-        style={{ marginBottom: 40 }}
       />
       {ethAddress ? (
         <EthPanel address={ethAddress} />

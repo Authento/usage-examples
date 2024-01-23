@@ -18,6 +18,27 @@ body {
   align-items: center;
 }
 
+#logo {
+  margin-bottom: 30px;
+}
+
+#radio-container {
+  display: flex;
+  width: 240px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+
+#radio-container label {
+  color: #ffffff;
+}
+
+#radio-container input {
+  margin-right: 10px;
+  color: #ffffff;
+}
+
 .panel {
   padding: 8px 16px;
   background: #20202080;
@@ -42,7 +63,7 @@ body {
 
 .address {
   display: block;
-  color: #fff;
+  color: #ffffff;
   font-size: 16px;
 }
 
@@ -96,7 +117,7 @@ button:disabled {
 
 .primary-btn {
   background: #26b8a5;
-  color: #fff;
+  color: #ffffff;
 }
 
 .container > .primary-btn {

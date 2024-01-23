@@ -1,6 +1,4 @@
-import WagmiProvider from "@/components/providers/wagmi";
-import CosmosProvider from "@/components/providers/Cosmos";
-
+import { Providers } from "@/components/providers/Providers";
 import "@/styles/global.css";
 
 export const metadata = {
@@ -16,9 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <CosmosProvider>
-          <WagmiProvider>{children}</WagmiProvider>
-        </CosmosProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
